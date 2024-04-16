@@ -5,6 +5,7 @@ import femaleImage from './img/female.png'
 
 import { useState } from "react"
 function Employee(){
+    const [selectedTeam, setSelectedTeam]=useState("Team C")
     const [employeeData, setEmployeeData] = useState([
         {
             id:"1",
@@ -16,7 +17,7 @@ function Employee(){
         {
             id:"2",
             name: "Samuel",
-            career: "Frontend Engineer",
+            career: "Frontend Eng.",
             team: "Team B",
             gender: "Male",
         },
@@ -81,8 +82,8 @@ function Employee(){
     return(
         <main className="container">
             <h1 className="text-center">Team Tracking Application</h1>
-            <div id="filter">
-                <select>
+            <div id="filter" >
+                <select className="btn" value={selectedTeam}>
                     <option>Team A</option>
                     <option>Team B</option>
                     <option>Team C</option>
