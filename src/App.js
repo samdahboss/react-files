@@ -1,17 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Employee from './employee';
+import "./bootstrap/css/bootstrap.css"
+import Employee from './employee'
+import {Link} from 'react-router-dom'
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Employee" element={<Employee />} />
-      </Routes>
-    </Router>
+    <div className="container p-4 bg-dark">
+      <h1 className="home-page-header fs-2 fw-bold text-center text-white">Team Tracking Application</h1>
+      <button className="btn btn-light d-block mx-auto">Employee Page</button>
+      <Link className="link" to={Employee}>To Employee Page</Link>
+    </div>
   );
-};
+}
 
 export default App;
