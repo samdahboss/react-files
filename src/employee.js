@@ -1,10 +1,16 @@
+import { Link } from 'react-router-dom';
+import React, { useState } from "react"
+
 import "./employee.css"
 import "./bootstrap/css/bootstrap.css"
+
 import maleImage from './img/male.png'
 import femaleImage from './img/female.png'
 
-import { useState } from "react"
 function Employee(){
+    function changeTeam(event){
+        setSelectedTeam(event.target.value);
+    }
     const [selectedTeam, setSelectedTeam]=useState("Team C")
     const [employeeData, setEmployeeData] = useState([
         {
@@ -18,7 +24,7 @@ function Employee(){
             id:"2",
             name: "Samuel",
             career: "Frontend Eng.",
-            team: "Team B",
+            team: "Team D",
             gender: "Male",
         },
         {
@@ -32,7 +38,7 @@ function Employee(){
             id:"4",
             name: "Ebunoluwa",
             career: "Project Manager",
-            team: "Team A",
+            team: "Team B",
             gender: "Female",
         },
         {
@@ -41,6 +47,13 @@ function Employee(){
             career: "Product Manager",
             team: "Team A",
             gender: "Female",
+        },
+        {
+            id:"5",
+            name: "Raphael",
+            career: "Backend Dev.",
+            team: "Team D",
+            gender: "Male",
         },
         {
             id:"6",
@@ -53,7 +66,7 @@ function Employee(){
             id:"7",
             name: "Oore",
             career: "UI/UX designer",
-            team: "Team C",
+            team: "Team A",
             gender: "Male",
         },
         {
@@ -83,15 +96,18 @@ function Employee(){
         <main className="container">
             <h1 className="text-center">Team Tracking Application</h1>
             <div id="filter" >
-                <select className="btn" value={selectedTeam}>
+                <select className="btn" value={selectedTeam} onChange={changeTeam}>
                     <option>Team A</option>
                     <option>Team B</option>
                     <option>Team C</option>
                     <option>Team D</option>
                 </select>
             </div>
+            <Link className="link" to="/">Back to Home Page</Link>
             <div id="container">
-                {employeeData.map ((data)=>{
+                {employeeData
+                .filter(data=> data.team === selectedTeam)
+                .map ((data)=>{
                     return(
                         <div key={data.id} id="employee" className="col-md-12">
                             <img src={data.gender === "Male"?maleImage:femaleImage} alt="" width="100%" height="250px"></img>
