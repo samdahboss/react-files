@@ -103,7 +103,9 @@ function Employee(){
                     <option>Team D</option>
                 </select>
             </div>
-            <Link className="link" to="/">Back to Home Page</Link>
+            <button className="btn btn-dark d-block mx-auto">
+                <Link className="link" to="/">Home Page</Link>
+            </button>
             <div id="container">
                 {employeeData
                 .filter(data=> data.team === selectedTeam)
