@@ -10,11 +10,26 @@ body{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px, 
                 rgba(0, 0, 0, 0.22) 0px 10px 10px 0px;
 }
+main h1{
+    background-color: rgb(160, 156, 156);
+    padding: 0.1em 0px;
+}
+#nav-content{
+    border-bottom: 3px solid black !important;
+    padding-bottom: 5px;
+}
+#nav-content button{
+    background-color: rgb(160, 156, 156);
+}
+#nav-content button a{
+    color: white;
+}
 #employee h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 #employee{
     margin: auto;
+    position: relative;
     text-align: center;
     background-color: rgb(160, 156, 156);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px,
@@ -22,6 +37,13 @@ body{
     color: black;
     border-radius: 20px;
     padding: 10px;
+}
+#employee .deleteBtn{
+    position: absolute;
+    right: 10px;
+    border-top-right-radius: 20px;
+    border-style: none;
+    width: 10%;
 }
 #employee:hover{
     cursor: pointer;

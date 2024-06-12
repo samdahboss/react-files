@@ -1,0 +1,41 @@
+
+*{
+    box-sizing: border-box;
+}
+div.container.form{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    width: 50%;
+    margin: auto;
+    height: 80%;
+}
+form label:not(label[class="radio-label"]){
+    display: inline;
+}
+form input, form select{
+    display: inline;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+input[type="submit"]{
+    border: none;
+    background-color: linear-gradient(
+        #fff 0%,
+        #a09c9c 40%
+    );
+    padding: 0.5em 0em;
+    border-radius: 10px;
+}
+input[type="radio"]{
+    display: inline;
+    width: 20px;
+}
